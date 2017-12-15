@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -34,17 +34,16 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'pg','~> 0.18'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  gem 'rspec-rails'
   gem 'byebug', platform: :mri
 end
 
-group :development do
-  gem "capistrano", "~> 3.4"
-  gem "capistrano-rvm"
-  gem "capistrano-rails"
-end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
